@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="username">
+    </br>
+
+    <span id="uName"></span>
+
+    <script>
+
+        // Object是全局变量，defineProperty添加属性，可以扩展属性的能力，defineProperty模拟数据双向绑定
+        var  obj={};
+        Object.defineProperty(obj,"username",{
+            get:function(){
+        },
+         set:function(){
+         console.log('set init')
+          }
+        });
+        document.getElementById("username").addEventListener('keyup',function(){
+            document.getElementById('uName').innerText=event.target.value;
+
+        })
+        //addEventListener里面有两个api，set，get   
+        
+    </script>
+</body>
+</html>
